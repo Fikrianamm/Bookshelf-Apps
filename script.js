@@ -116,7 +116,7 @@ document.addEventListener(RENDER_EVENT,()=>{
 function handleAddBook(e){
     e.preventDefault();
 
-    const data = new Book(title.value,author.value,year.value,isComplete.checked)
+    const data = new Book(title.value,author.value,parseInt(year.value),isComplete.checked)
     books.push(data)
     
     document.dispatchEvent(new Event(RENDER_EVENT))
@@ -174,7 +174,7 @@ function editBook(id){
 
         bookSelected.title = title.value 
         bookSelected.author = author.value 
-        bookSelected.year = year.value 
+        bookSelected.year = parseInt(year.value) 
         bookSelected.isComplete = isComplete.checked 
         saveData()
     })
