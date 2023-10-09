@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookshelf Apps</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Bookshelf Apps</h1>
+    </header>
+    <main>
+      <section class="col">
+        <h2 class="title edit">Masukkan Buku Baru</h2>
+        <form action="#" class="form-addBook" >
+          <div class="inputForm">
+            <label for="judul">Judul</label>
+            <input
+              type="text"
+              name="judul"
+              id="judul"
+              placeholder="Masukkan Judul buku (Contoh: Atomic Habits)"
+              required
+            />
+          </div>
+          <div class="inputForm">
+            <label for="penulis">Penulis</label>
+            <input
+              type="text"
+              name="penulis"
+              id="penulis"
+              placeholder="Masukkan Penulis buku (Contoh: James Clear)"
+              required
+            />
+          </div>
+          <div class="inputForm">
+            <label for="tahun">Tahun</label>
+            <input
+              type="number"
+              name="tahun"
+              id="tahun"
+              placeholder="Masukkan Tahun terbit (Contoh: 2018)"
+              required
+            />
+          </div>
+          <div class="inputForm">
+            <label for="unread">Selesai dibaca</label>
+            <input type="checkbox" name="unread" id="unread" />
+          </div class="formBtn">
+          <button type="submit" class="btn update">Tambah Buku</button>
+        </form>
+      </section>
+      <section class="col">
+        <div class="row">
+          <h2 class="title">Cari Buku</h2>
+          <form action="#" class="cari-buku" onsubmit="handleSearch(event)">
+            <input
+              type="text"
+              name="cari"
+              id="cari"
+              placeholder="Kamu mencari buku apa?..."
+              required
+            />
+            <button type="submit" class="btn">Cari</button>
+          </form>
+        </div>
+        <div class="row">
+          <h2 class="title">Belum Selesai Dibaca</h2>
+          <div class="belum-selesai"></div>
+        </div>
+        <div class="row">
+          <h2 class="title">Selesai Dibaca</h2>
+          <div class="selesai"></div>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
