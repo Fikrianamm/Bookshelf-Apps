@@ -46,7 +46,6 @@ function makeElement(bookObject){
     authorText.classList.add("semiBold")
     authorText.innerText = author
     
-    
     const labelYear = document.createElement("p")
     labelYear.classList.add("label")
     labelYear.innerText = "Tahun Terbit"  
@@ -122,10 +121,6 @@ function handleAddBook(e){
     
     document.dispatchEvent(new Event(RENDER_EVENT))
     saveData()
-    emptyForm()
-}
-
-function emptyForm(){
     title.value = ""
     author.value = ""
     year.value = null
@@ -150,7 +145,7 @@ document.addEventListener("DOMContentLoaded", () =>{
         const booksParse = JSON.parse(getData)  
         books = booksParse
     }else{
-        console.log("Data not found");
+        alert("Data not found");
     }
     document.dispatchEvent(new Event(RENDER_EVENT))
     return books
@@ -164,10 +159,12 @@ function editBook(id){
     updateBtn.innerText = "Update"
     
     const bookSelected = findBook(id)
+    
     title.value = bookSelected.title
     author.value = bookSelected.author
     year.value = bookSelected.year
     isComplete.checked = bookSelected.isComplete
+
     formAddBook.addEventListener("submit",()=>{
         statusEdit = false
         editTitle.innerText = "Masukkan Buku Baru"
@@ -197,7 +194,6 @@ function findIndexBook(id){
 }
 
 function removeBook(id){
-    console.log(findIndexBook(id));
     const indexBook = findIndexBook(id)
 
     if(indexBook === -1) return
